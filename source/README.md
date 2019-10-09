@@ -29,7 +29,7 @@ Document is off-line and auto synchronize with npm server.
 ### Manual Update
 Default hot key is ctrl + cmd + u( windows: ctrl + win + u) or  right-click the text editor in the text with the extension vue or HTML
 
-![image](/blob/master/source/assets/right-click.png)
+![image](./blob/master/source/assets/right-click.png)
 
 ### Keymap
 view document: Default hot key is ctrl + cmd + s( windows: ctrl + win + s). If it has conflicted with other software's hot key. You can customize it. see keybindings.
