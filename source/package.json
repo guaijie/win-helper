@@ -1,0 +1,92 @@
+{
+    "name": "win-helper",
+    "displayName": "win-helper",
+    "description": "Full win-plus tags and props",
+    "publisher": "win-plus",
+    "author": "win-plus",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Snippets",
+        "Other"
+    ],
+    "icon": "win.png",
+    "keywords": [
+        "vscode",
+        "win",
+        "hint"
+    ],
+    "version": "1.0.1",
+    "activationEvents": [
+        "onLanguage:html",
+        "onLanguage:vue",
+        "onCommand:win-helper.search",
+        "onCommand:win-helper.update"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "win-helper.search",
+                "title": "win-helper.search"
+            },
+            {
+                "command": "win-helper.update",
+                "title": "win-helper.update"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceLangId == vue ||  resourceLangId == html ",
+                    "command": "win-helper.update",
+                    "group": "navigation@1"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "win-helper.search",
+                "key": "ctrl+cmd+s",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "win-helper.update",
+                "key": "ctrl+cmd+u",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "yarn run compile",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.6",
+        "@types/node": "^10.12.21",
+        "@types/vscode": "^1.38.0",
+        "glob": "^7.1.4",
+        "mocha": "^6.1.4",
+        "tslint": "^5.12.1",
+        "typescript": "^3.3.1",
+        "vscode-test": "^1.2.0"
+    },
+    "dependencies": {
+        "@types/semver": "^6.0.2",
+        "@types/shelljs": "^0.8.5",
+        "axios": "^0.19.0",
+        "cheerio": "^1.0.0-rc.3",
+        "element-gh-pages": "^1.0.26",
+        "element-helper-json-new": "^2.0.6",
+        "pretty": "^2.0.0",
+        "semver": "^6.3.0",
+        "shelljs": "^0.8.3",
+        "win-docs": "^1.0.1"
+    }
+}
