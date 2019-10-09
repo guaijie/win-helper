@@ -23,6 +23,8 @@ Win-helper helps you improve your productivity when developing with win-plus as 
 
 4 - Enter and trigger document browser
 
+![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/view-docs.gif)
+
 ### Auto Update Mechanism
 Document is off-line and auto synchronize with npm server.
 
@@ -31,6 +33,8 @@ Default hot key is ctrl + cmd + u( windows: ctrl + win + u) or  right-click the 
 
 ![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/right-click.png)
 
+![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/update-docs.gif)
+
 ### Keymap
 view document: Default hot key is ctrl + cmd + s( windows: ctrl + win + s). If it has conflicted with other software's hot key. You can customize it. see keybindings.
 
@@ -38,6 +42,7 @@ manual update: Default hot key is ctrl + cmd + u( windows: ctrl + win + u). If i
 
 ## Automatic Completion
 
+![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/snippets.gif)
 
 ## LICENSE
 MIT
