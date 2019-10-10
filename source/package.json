@@ -21,9 +21,7 @@
     "version": "1.0.1",
     "activationEvents": [
         "onLanguage:html",
-        "onLanguage:vue",
-        "onCommand:win-helper.search",
-        "onCommand:win-helper.update"
+        "onLanguage:vue"
     ],
     "main": "./out/extension.js",
     "contributes": {

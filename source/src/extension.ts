@@ -33,19 +33,19 @@ export function activate(context: vscode.ExtensionContext) {
 		library.updateVersion()
 		.then((child)=>{
 			if(child){
-				child.on("exit", (code) => {
+				child.on("exit", (code:number) => {
 					library.child = null;
 					disposable.dispose();
-					library.setLoading("updated", 1000);
+					library.setLoading("updated", 2000);
 					if (code === 0) {
-						library.setLoading("Update successful", 1000);
+						library.setLoading("Update successful", 2000);
 					} else {
-						library.setLoading("Update failed", 1000);
+						library.setLoading("Update failed", 2000);
 					}
 				});
 			}else{
 				disposable.dispose();
-				library.setLoading("It is the latest version", 1000);
+				library.setLoading("It is the latest version", 2000);
 			}
 		});
 		
@@ -75,7 +75,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (find.length >= 1) {
 			app.openDocs(find[0].path);
 		} else {
-			vscode.window.showQuickPick(items).then(selected => {
+			vscode.window.showQuickPick(items).then((selected: any) => {
 				app.openDocs(selected.path);
 			});
 		}

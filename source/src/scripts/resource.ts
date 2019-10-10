@@ -12,8 +12,9 @@ export default class Resource {
   static PROJECT_ROOT: string;
   static WIN_VERSION: string;
   static DOCKERURL:string = "http://docker.yhfin.club:81/service/extdirect";
-  static ONLINE_LATEST:string = "0.0";
-  static LOCAL_LATEST: string = "0.0";
+  static ONLINE_LATEST_WINDOCS:string = "0.0.0";
+  static LOCAL_WINDOCS: string = "0.0.0";
+  static LOCAL_LATEST_DOC: string = "0.0";
 
   static get(filePath: string) {
     return new Promise((resolve, reject) => {
@@ -73,7 +74,7 @@ export default class Resource {
   static async getMarkDown(title: string): Promise<string> {
     let content: any;
     try {
-      content = await Resource.get(join(Resource.DOCS_PATH, "docs", Resource.WIN_VERSION||Resource.LOCAL_LATEST, `${title}.md`));
+      content = await Resource.get(join(Resource.DOCS_PATH, "docs", Resource.WIN_VERSION||Resource.LOCAL_LATEST_DOC, `${title}.md`));
     } catch{
       content = "";
     }

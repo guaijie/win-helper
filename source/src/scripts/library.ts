@@ -6,6 +6,8 @@ import { window, ExtensionContext } from "vscode";
 import { ChildProcess } from "child_process";
 import axios from "axios";
 import { coerce, lt } from "semver";
+import { join } from "path";
+import { readFileSync } from "fs";
 
 
 class Library {
@@ -33,7 +35,7 @@ class Library {
   }
 
   async updateVersion() {
-    let onlineResult: string[], localResult: string[];
+    let onlineWinDocs: string[], localDocs: string[];
     try {
       let { data: { result: { data } } } = await axios.post(
         Resource.DOCKERURL,
@@ -43,36 +45,43 @@ class Library {
           "data": [{
             "repositoryName": "winnpm",
             "sort": [{ "property": "leaf", "direction": "ASC" }],
-            "node": "win-plus"
+            "node": "win-docs"
           }],
           "type": "rpc",
           "tid": 10
         }
       );
-      onlineResult = data ? data.map((item: any) => {
+      onlineWinDocs = data ? data.map((item: any) => {
         return coerce(item.id).format();
       }) : [];
 
     } catch (e) {
-      onlineResult = [];
+      onlineWinDocs = [];
     }
     try {
-      localResult = await Resource.getAllVersion();
-      localResult = localResult.map(v => coerce(v).format());
+      localDocs = await Resource.getAllVersion();
+      localDocs = localDocs.map(v => coerce(v).format());
     } catch (e) {
-      localResult = [];
+      localDocs = [];
+    }
+    
+    let JSONObj = JSON.parse(readFileSync(join(Resource.ROOT_PATH,"package.json"),{encoding: "utf8"})); 
+    let semver = coerce(JSONObj["dependencies"]["win-docs"]);
+    if( semver ){
+      Resource.LOCAL_WINDOCS = semver.format();
     }
 
-    if (onlineResult.length > 0) {
-      let semver = coerce(this.getLastestVersion(onlineResult));
-      Resource.ONLINE_LATEST = semver.major + "." + semver.minor;
+    if (onlineWinDocs.length > 0) {
+      let semver = coerce(this.getLastestVersion(onlineWinDocs));
+      Resource.ONLINE_LATEST_WINDOCS = semver.format();
     }
-    if (localResult.length > 0) {
-      let semver = coerce(this.getLastestVersion(localResult));
-      Resource.LOCAL_LATEST = semver.major + "." + semver.minor;
+    if (localDocs.length > 0) {
+      let semver = coerce(this.getLastestVersion(localDocs));
+      Resource.LOCAL_LATEST_DOC = semver.major + "." + semver.minor;
     }
 
-    if(Resource.ONLINE_LATEST>Resource.LOCAL_LATEST){
+    // console.log(Resource.LOCAL_LATEST_DOC,Resource.LOCAL_WINDOCS,Resource.ONLINE_LATEST_WINDOCS);
+    if(lt(Resource.LOCAL_WINDOCS,Resource.ONLINE_LATEST_WINDOCS)){
       cd(Resource.ROOT_PATH);
       let child = exec("npm install win-docs@latest --save", { async: true });
       this.child = child;

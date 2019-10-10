@@ -136,7 +136,6 @@ export class WinCompletionItemProvider implements CompletionItemProvider {
 
             let attrVersion = ATTRS[tag][event ? "events" : "attrs"][attr].version;
             let version = Resource.WIN_VERSION ;
-            // console.log(coerce(version).format(), attrVersion);
             if (version && !satisfies(coerce(version).format(), attrVersion)) {
                 return;
             }

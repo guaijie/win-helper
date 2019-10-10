@@ -1,4 +1,4 @@
-# win README
+# win-helper
 
 > win-helper is a VS Code extension for win-plus.
 
