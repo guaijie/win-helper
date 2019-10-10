@@ -23,7 +23,7 @@ Win-helper helps you improve your productivity when developing with win-plus as 
 
 4 - Enter and trigger document browser
 
-[img]https://i.postimg.cc/r0kgQwY6/view-docs.gif[/img]
+![gif](https://i.postimg.cc/Hn8CNZZB/view-docs.gif)
 
 ### Auto Update Mechanism
 Document is off-line and auto synchronize with npm server.
@@ -31,8 +31,10 @@ Document is off-line and auto synchronize with npm server.
 ### Manual Update
 Default hot key is ctrl + cmd + u( windows: ctrl + win + u) or  right-click the text editor in the text with the extension vue or HTML
 
-[img]https://i.postimg.cc/nXrWDrN0/right-click.png[/img]
-[img]https://i.postimg.cc/87Y0BDSD/update-docs.gif[/img]
+![img](https://i.postimg.cc/43wZHhHb/right-click.png)
+<br/>
+
+![gif](https://i.postimg.cc/k44CQXxr/update-docs.gif)
 
 ### Keymap
 view document: Default hot key is ctrl + cmd + s( windows: ctrl + win + s). If it has conflicted with other software's hot key. You can customize it. see keybindings.
@@ -41,7 +43,7 @@ manual update: Default hot key is ctrl + cmd + u( windows: ctrl + win + u). If i
 
 ## Automatic Completion
 
-[img]https://i.postimg.cc/PL8FScXD/snippets.gif[/img]
+![img](https://i.postimg.cc/4dSgBk5Y/snippets.gif)
 
 ## LICENSE
 MIT
