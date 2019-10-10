@@ -15,15 +15,15 @@ Win-helper helps you improve your productivity when developing with win-plus as 
 ## Document View
 
 ### Usage
-1 - Move cursor to Element-UI tag or select it
+1 - Move cursor to win-plus tag or select it
 
-2 - Press default hot key ctrl + cmd + s(windows: ctrl + win + s) or Press ⇧⌘P to bring up the Command Palette and then input element-helper.search
+2 - Press default hot key ctrl + cmd + s(windows: ctrl + win + s) or Press ⇧⌘P to bring up the Command Palette and then input win-helper.search
 
 3 - Show document view If complete matching, or you should select tag you want to search
 
 4 - Enter and trigger document browser
 
-![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/view-docs.gif)
+[img]https://i.postimg.cc/r0kgQwY6/view-docs.gif[/img]
 
 ### Auto Update Mechanism
 Document is off-line and auto synchronize with npm server.
@@ -31,9 +31,8 @@ Document is off-line and auto synchronize with npm server.
 ### Manual Update
 Default hot key is ctrl + cmd + u( windows: ctrl + win + u) or  right-click the text editor in the text with the extension vue or HTML
 
-![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/right-click.png)
-
-![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/update-docs.gif)
+[img]https://i.postimg.cc/nXrWDrN0/right-click.png[/img]
+[img]https://i.postimg.cc/87Y0BDSD/update-docs.gif[/img]
 
 ### Keymap
 view document: Default hot key is ctrl + cmd + s( windows: ctrl + win + s). If it has conflicted with other software's hot key. You can customize it. see keybindings.
@@ -42,7 +41,7 @@ manual update: Default hot key is ctrl + cmd + u( windows: ctrl + win + u). If i
 
 ## Automatic Completion
 
-![image](http://222.240.48.29:1080/image-group/win-plus-image/blob/master/win-helper/snippets.gif)
+[img]https://i.postimg.cc/PL8FScXD/snippets.gif[/img]
 
 ## LICENSE
 MIT
